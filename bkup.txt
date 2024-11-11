@@ -1,0 +1,35 @@
+//     if(i<8){
+//         dir = DIREITA;
+//     }
+//     else if(i<17){
+//         dir = BAIXO;
+//     }
+//     else{
+//         dir = ESQUERDA;
+//     }
+
+
+
+int totalX = 8;
+int totalY = 2*8-1;
+
+void tela(int Y, int X)
+{
+    char display[totalX][totalY];
+
+    for (int i = 0; i < totalX; i++) 
+    {      
+        for (int j = 0; j < totalY; j++){
+                if((i==0 && j%2==0)|| j==0 || (i==totalX-1 && j%2==0) || j==totalY-1){
+                     display[i][j] = '*';
+                }
+                else{
+                    display[i][j] = ' ';
+                }
+            display[X][2*Y] = 'C';
+            
+            cout << display[i][j];
+         }
+        cout << endl;
+    }
+}
