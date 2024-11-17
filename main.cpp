@@ -5,20 +5,28 @@
 #include <vector>
 using namespace std;
 
-vector<int> posx = {4, 4, 4, 4};
-vector<int> posy = {4, 5, 6, 7};
+// cobra
+vector<int> posx = {2};
+vector<int> posy = {4};
+int x = posx[0];
+int y = posy[0];
+enum eDirecao {ESQUERDA = 0, DIREITA, CIMA, BAIXO, PARADO};
+eDirecao dir = CIMA;
+
+//tela
 int lenX = 8;
 int lenY = 10;
 int totalX = 2*(lenX+2);
 int totalY = lenY+2;
-int x = posx[0];
-int y = posy[0];
-bool gameOver = false;
-int macaX = 6;
-int macaY = 6;
 
-enum eDirecao { ESQUERDA = 0, DIREITA, CIMA, BAIXO, PARADO};
-eDirecao dir;
+// gameOver
+bool gameOver = false;
+
+// maca
+int macaX = (lenX / 2) + 1;
+int macaY = (lenY / 2) + 1;
+
+
 
 int getch(){
     struct termios oldt, newt;
@@ -197,7 +205,7 @@ void comeuMaca(){
 int main(){
 
     int i = 1; 
-    dir = CIMA;
+    
 
 
     while (true)
